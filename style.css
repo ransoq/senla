@@ -1,0 +1,104 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    position: fixed;
+    padding: 5px 50px;
+    max-height: 50px;
+    width: 100%;
+    background:rgb(255, 144, 162, .5);
+    z-index: 1;
+}
+
+header .btn {
+    margin: 15px 0;
+    background-color: #ff4b54;
+    width: 150px;
+    height: 30px;
+    border: solid;
+    border-radius: 5px;
+    border-color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+.main {
+    padding: 70px 0;
+    background: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&w=1000&q=80) center/cover no-repeat;
+}
+
+.container {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pay {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pay .cat_table {
+    width: 100%;
+	border-collapse:collapse;
+	border-spacing:0;
+    height: auto;
+    text-align: center;
+}
+
+.cat_table td {
+    border: 1px solid #595959;
+    padding: 10px;
+	height: 40px;
+}
+
+.cat_table th {
+    background: #347c99; 
+	color: #fff; 
+	font-weight: normal;
+}
+
+.myform {
+    display: flex;
+    justify-content: center;
+}
+
+.myname {
+    width: 200px;
+}
+
+.btn_cat {
+    width: 200px;
+    height: 40px;
+    margin-left: 50px;
+    background-color: #00ffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+footer {
+    min-height: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+footer a img {
+    margin: 10px 0 0 0;
+}
