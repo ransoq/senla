@@ -2,10 +2,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body {
+/* body {
     margin: 0px;
     padding: 0px;
-}
+} */
 
 header {
     position: fixed;
@@ -55,8 +55,7 @@ header .btn {
 
 .pay .cat_table {
     width: 100%;
-	border-collapse:collapse;
-	border-spacing:0;
+	border-collapse: collapse;
     height: auto;
     text-align: center;
 }
@@ -68,9 +67,10 @@ header .btn {
 }
 
 .cat_table th {
-    background: #347c99; 
-	color: #fff; 
-	font-weight: normal;
+    border: 1px solid #595959;
+    background: none; 
+    font-weight: bold;
+    width: 90px;
 }
 
 .myform {
@@ -91,6 +91,33 @@ header .btn {
     border-radius: 5px;
     font-weight: bold;
     font-size: 16px;
+}
+
+.sec_btn {
+    width: 200px;
+    height: 40px;
+    margin-left: 50px;
+    background-color: #00ffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.cat_checkbox {
+    margin-top: 50px;
+}
+
+.cat_login {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cat_radio {
+    margin-top: 50px;
 }
 
 footer {
