@@ -1,0 +1,42 @@
+#layout {
+    width: 100%;
+    height: 800px;
+    background: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&w=1000&q=80) center/cover no-repeat;
+}
+
+td {
+    padding: 50px;
+    vertical-align: top;
+}
+
+#cat {
+    text-align: center;
+}
+
+.btn {
+    margin: 15px 0;
+    background-color: #ff4b54;
+    width: 150px;
+    height: 30px;
+    border: solid;
+    border-radius: 5px;
+    border-color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#lorem {
+    font-size: 23px;
+}
+
+.btn_cat {
+    margin-top: 20px;
+    width: 177px;
+    height: 40px;
+    background-color: #00ffff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
