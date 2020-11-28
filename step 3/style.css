@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 #layout {
     width: 100%;
     height: 800px;
@@ -14,11 +19,10 @@ td {
 }
 
 .btn {
-    margin: 15px 0;
+    margin: 15px 10px;
     background-color: #ff4b54;
     width: 150px;
     height: 30px;
-    border: solid;
     border-radius: 5px;
     border-color: #000000;
     font-weight: bold;
@@ -39,4 +43,76 @@ td {
     border-radius: 5px;
     font-weight: bold;
     font-size: 16px;
+}
+
+#mainPage {
+    display: grid;
+    grid-template-areas: 
+        "header header header"
+        "article article article"
+        "firstad secad thirdad"
+        "fish fish fish";
+    grid-template-rows: 60px 1fr 100px 1fr;
+    background: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&w=1000&q=80) center/cover no-repeat;
+}
+
+#pageHeader {
+    grid-area: header;
+    position: fixed;
+    padding: 5px 50px;
+    width: 100%;
+    background:rgb(255, 144, 162, .5);
+    z-index: 1;
+}
+
+
+#pageArticle {
+    grid-area: article;
+    text-align: center;
+}
+
+#pageAddFirst {
+    grid-area: firstad;
+    z-index: 1;
+    border: 1px;
+    text-align: center;
+}
+
+#pageAddSecond { 
+    grid-area: secad;
+    border: 1px;
+    z-index: 1;
+    text-align: center;
+}
+
+#pageAddThird {
+    grid-area: thirdad;
+    border: 1px;
+    z-index: 1;
+    text-align: center;
+}
+
+#pageFish {
+    grid-area: fish;
+    padding: 10px;
+}
+
+@media (min-width: 1280px) {
+    table {
+        display: table
+    }
+    
+    #mainPage {
+        display: none
+    }
+}
+
+@media (max-width: 1280px) {
+    table {
+        display: none
+    }
+
+    #mainPage {
+        display: grid
+    }
 }
