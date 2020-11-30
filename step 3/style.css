@@ -47,33 +47,27 @@ td {
 
 #mainPage {
     display: grid;
-    grid-template-areas: 
-        "header header header"
-        "article article article"
-        "firstad secad thirdad"
-        "fish fish fish";
-    grid-template-rows: 60px 1fr 100px;
     background: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&w=1000&q=80) center/cover no-repeat;
 }
 
 #pageHeader {
     grid-area: header;
-    position: fixed;
     padding: 5px 50px;
     width: 100%;
     background:rgb(255, 144, 162, .5);
-    z-index: 1;
 }
-
 
 #pageArticle {
     grid-area: article;
     text-align: center;
 }
 
+#pageArticle > img {
+    width: 80%
+}
+
 #pageAddFirst {
     grid-area: firstad;
-    z-index: 1;
     border: 1px;
     text-align: center;
 }
@@ -81,14 +75,12 @@ td {
 #pageAddSecond { 
     grid-area: secad;
     border: 1px;
-    z-index: 1;
     text-align: center;
 }
 
 #pageAddThird {
     grid-area: thirdad;
     border: 1px;
-    z-index: 1;
     text-align: center;
 }
 
@@ -97,22 +89,59 @@ td {
     padding: 10px;
 }
 
-@media (min-width: 1280px) {
-    table {
-        display: table
-    }
-    
-    #mainPage {
-        display: none
-    }
-}
-
 @media (max-width: 1280px) {
     table {
         display: none
     }
 
     #mainPage {
-        display: grid
+        grid-template-areas: 
+        "header header header"
+        "article article article"
+        "firstad secad thirdad"
+        "fish fish fish";
+        grid-template-rows: 60px 1fr 100px;
+    }
+
+    #pageHeader {
+        position: fixed;
+    }
+
+}
+
+@media (min-width: 1280px) {
+    table {
+        display: none
+    }
+    
+    #mainPage {
+        grid-template-areas: 
+        "article article header"
+        "firstad fish header"
+        "secad fish header"
+        "thirdad fish header";
+        grid-template-rows: 1fr auto auto;
+    }
+
+    #pageArticle {
+        width: 800px;
+    }
+
+    #pageHeader {
+        width: 400px;
+        height: auto;
+    }
+
+    #pageAddSecond { 
+        margin-top: 40px;
+    }
+    
+    #pageAddThird {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    #pageFish {
+        font-size: 22px;
     }
 }
