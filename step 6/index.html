@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кот Борис</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <table id="layout" border="1">
+        <tbody>
+            <tr>
+                <td id="cat" colspan="2" width="800px">
+                    <h1>Кот Борис</h1>
+                    <img src="https://www.ridus.ru/images/2019/5/10/916847/hd_2442106617.jpg" alt="Привет">
+                </td>
+                <td rowspan="4" width="400px" height="auto">
+                    <ul type="none">
+                        <li><a href="#"><button class="btn">Главная</button></a></li>
+                        <li><a href="#"><button class="btn">Не главная</button></a></li>
+                        <li><a href="#"><button class="btn">Погладить Бориса</button></a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td width="100px" height="auto">
+                    <form action="#">
+                        <input class="myname" type="text" placeholder="Мяу!">
+                        <button class="btn_cat" type="submit">Перевести</button>
+                    </form>
+                </td>
+                <td id="lorem" rowspan="3" height="auto">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                </td>
+            </tr border-spacing="0px 40px">
+            <tr>
+                <td width="100px" height="auto">
+                    <form action="#">
+                        <input class="myname" type="text" placeholder="Мяу!">
+                        <button class="btn_cat" type="submit">Перевести</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td width="100px" height="auto">
+                    <form action="#">
+                        <input class="myname" type="text" placeholder="Мяу!">
+                        <button class="btn_cat" type="submit">Перевести</button>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="mainPage">
+        <header id="pageHeader">
+            <a href="#"><button class="btn">Главная</button></a>
+            <a href="#"><button class="btn" id="btnChange">Кликни меня</button></a>
+            <a href="#"><button class="btn" onclick="goBack()">Назад</button></a>
+            <a href="#"><button class="btn" onclick="goForward()">Вперед</button></a>
+            <!-- <a href="#"><button class="btn">Погладить Бориса</button></a> -->
+        </header>
+        <article id="pageArticle">
+            <h1>Кот Борис</h1>
+            <img class="cat_img" src="https://www.ridus.ru/images/2019/5/10/916847/hd_2442106617.jpg" alt="Привет">
+        </article>
+        <div id="pageAddFirst">
+            <h2>Кошачий E-mail</h2>
+            <form action="#">
+                <input type="email" id="email" name="email" placeholder="Введите e-mail">
+                <div id="error"></div>
+                <button class="btn_cat" type="submit" id="btnEmail">Отправить</button>
+            </form>
+        </div>
+        <div id="pageAddSecond">
+            <h2>Кошачий калькулятор</h2>
+            <form action="#">
+                <input id="calc" type="text" placeholder="Мяу!">
+                <select id="sel">
+                    <option value=""> </option>
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="x">x</option>
+                    <option value="/">/</option>
+                </select>
+                <button class="btn_cat" type="submit" id="result">Посчитать</button>
+            </form>
+        </div>
+        <div id="pageAddThird">
+            <h2>Поздороваться с Борисом</h2>
+            <form action="#">
+                <input type="text" placeholder="Мяу!">
+                <button class="btn_cat" type="submit" id="sayhello">Привет!</button>
+            </form>
+        </div>
+        <div id="pageFish">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </div>
+    </div>
+</body>
+</html>
