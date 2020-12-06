@@ -95,5 +95,41 @@
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         </div>
     </div>
+
+    <script>
+        // change content
+        const btn = document.querySelector("#btnChange");
+        btn.addEventListener('click', (e) => btn.innerHTML = "Woooops");
+        // hover 
+        document.querySelector("#btnChange").addEventListener('mouseover', (e) => e.target.style.color = "yellow");
+        document.querySelector("#btnChange").addEventListener('mouseout', (e) => e.target.style.color = "");
+        // focus input
+        const email = document.querySelector('#email'),
+        error = document.querySelector('#error');
+
+        email.onblur = function() {
+            if (!email.value.includes('@')) {
+                email.focus();
+                email.classList.add('invalid');
+                error.innerHTML = 'Пожалуйста, введите правильный email.';
+            }
+        };
+        
+        email.onfocus = function() {
+            if (this.classList.contains('invalid')) {
+                this.classList.remove('invalid');
+                error.innerHTML = "";
+            }
+        };
+        // event
+        function change() {
+        const btns = document.querySelectorAll('.btn_cat');
+
+        for (let btn of btns) {
+            console.log(btn);
+            btn.classList.toggle("green");
+        }
+        }
+    </script>
 </body>
 </html>

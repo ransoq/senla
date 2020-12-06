@@ -59,38 +59,38 @@ function calc() {
 
 const descr = "Ваша киска" + " купила бы 10 пачек" + " whiskas!";
 
-console.log(descr);
+// console.log(descr);
 
 // Экранирование
 
-console.log(descr.match(/\d/g));
-console.log(descr.match(/\w/g));
-console.log(descr.match(/\!/g));
+// console.log(descr.match(/\d/g));
+// console.log(descr.match(/\w/g));
+// console.log(descr.match(/\!/g));
 
 // Шаблонизация
 
 const arrCatFood = ['whiskas', 'kitekat', 'sheba'];
 
-console.log(`Ваша киска купила бы ${arrCatFood[0]}`);
-console.log(`Ваша киска купила бы ${arrCatFood[1]} и ${arrCatFood[2]}`);
+// console.log(`Ваша киска купила бы ${arrCatFood[0]}`);
+// console.log(`Ваша киска купила бы ${arrCatFood[1]} и ${arrCatFood[2]}`);
 
 // Логические операции 
 
 let hourCat = 9;
 
 if (hourCat < 12 || hourCat > 3 ) {
-    console.log('Борис спит!');
+    // console.log('Борис спит!');
 }
 
 // try / catch
 
 try {
-    console.log('Начало');
-    console.log('Шаг 2');
-    console.log('Конец');
+    // console.log('Начало');
+    // console.log('Шаг 2');
+    // console.log('Конец');
     // afag
 } catch(e) {
-    console.log('Ошибка! ' + e.name + e.message);
+    // console.log('Ошибка! ' + e.name + e.message);
 }
 
 // Цикл
@@ -98,7 +98,7 @@ function change() {
     const btns = document.querySelectorAll('.btn_cat');
 
     for (let btn of btns) {
-        console.log(btn);
+        // console.log(btn);
         btn.classList.toggle("green");
     }
 }
@@ -129,13 +129,13 @@ email.onblur = function() {
 
 let arrFunc = (a, b, c) => a + b - c;
 
-console.log(arrFunc(10, 10, 5));
+// console.log(arrFunc(10, 10, 5));
 
 // default parametr 
 
 let defFunc = (a, b, c = 5) => a + b - c;
 
-console.log(defFunc(20, 20));
+// console.log(defFunc(20, 20));
 
 // Spread/Rest operator
 
@@ -143,7 +143,7 @@ const cats = ['Boris', 'Murzik', 'Barsik'],
       dogs = ['Bobik', 'Sharik'],
       animals = [...cats, ...dogs];
 
-console.log(animals);
+// console.log(animals);
 
 const nums = [1, 5, 4];
 
@@ -151,7 +151,7 @@ function arrRest(a, b, c) {
     return a + b + c;
 }
 
-console.log(arrRest(...nums));
+// console.log(arrRest(...nums));
 
 // class and super
 
@@ -168,15 +168,22 @@ class Animal {
 
 class Cat extends Animal {
     constructor(paws, tail, fur) {
-        super(paws, tail, fur);
+        super();
         this.name = 'Boris';
+        this.paws = paws;
+        this.tail = tail;
+        this.fur = fur;
+    }
+
+    foo() {
+        super.say();
     }
 }
 
 const Boris = new Cat(4, true, true);
 
 Boris.say();
-console.log(Boris);
+// console.log(Boris);
 
 //yield
 
@@ -189,17 +196,23 @@ function* gen(i) {
 
 const iter = gen(1);
 
-console.log(iter.next().value);
-console.log(iter.next().value);
+// console.log(iter.next().value);
+// console.log(iter.next().value);
 
 // Деструктуризация объекта
 
-const objDest = {
-    a: 1,
-    b: 2,
-    c: 3
-};
+// const objDest = {
+//     a: 1,
+//     b: 2,
+//     c: 3
+// };
 
-const {a, b, c} = objDest;
+// const {a, b, c} = objDest;
 
-console.log(a, b, c);
+// console.log(a, b, c);
+
+const a = {b: 1};
+const c = {...a,
+d: 2}
+
+console.log(c);

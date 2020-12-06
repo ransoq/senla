@@ -210,7 +210,7 @@ const {a, b, c} = objDest;
 
 const url = window.location.href;
 
-console.log("Текущий путь - " + url);
+// console.log("Текущий путь - " + url);
 
 function goBack() {
     history.back();
@@ -220,16 +220,33 @@ function goForward() {
     history.forward();
 }
 
-debugger;  // <-- здесь выполнение прерывается
+// debugger;  // <-- здесь выполнение прерывается
 
-console.log("Внимание! Информация из объекта navigator может вводить в заблуждение");
-console.log("cookiesEnabled установлено в " + navigator.cookieEnabled);
-console.log("navigator.appName - " + navigator.appName);
-console.log("navigator.appCodeName - " + navigator.appCodeName);
-console.log("navigator.product - " + navigator.product);
-console.log("Версия браузера - " + navigator.appVersion);
-console.log("Пользовательский агент браузера - " + navigator.userAgent);
-console.log("Операционная система - " + navigator.platform);
-console.log("Язык браузера - " + navigator.language);
-console.log("Браузер подключен к сети Интернет? - " + navigator.onLine);
-console.log("Java влючен? - " + navigator.javaEnabled());
+// console.log("Внимание! Информация из объекта navigator может вводить в заблуждение");
+// console.log("cookiesEnabled установлено в " + navigator.cookieEnabled);
+// console.log("navigator.appName - " + navigator.appName);
+// console.log("navigator.appCodeName - " + navigator.appCodeName);
+// console.log("navigator.product - " + navigator.product);
+// console.log("Версия браузера - " + navigator.appVersion);
+// console.log("Пользовательский агент браузера - " + navigator.userAgent);
+// console.log("Операционная система - " + navigator.platform);
+// console.log("Язык браузера - " + navigator.language);
+// console.log("Браузер подключен к сети Интернет? - " + navigator.onLine);
+// console.log("Java влючен? - " + navigator.javaEnabled());
+
+// cookie 
+
+document.cookie = "user=Boris"; // save cookie
+console.log(document.cookie);
+document.cookie = "user=Maxim"; // change
+console.log(document.cookie);
+document.cookie = "user=; path=/; expires="; // delete Boris
+console.log(document.cookie);
+
+// storage
+
+localStorage.setItem('user', 'Boris');
+console.log(localStorage.getItem('user'));
+
+sessionStorage.setItem('name', 'Maxim');
+console.log(sessionStorage.getItem('name'));

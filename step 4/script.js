@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelector("#result").addEventListener('click', calc);
     document.querySelector("#sayhello").addEventListener('click', () => alert("МЯУ!"));
     document.querySelector("#btnChange").addEventListener('click', change);
-    document.querySelector("#btnChange").addEventListener('mouseover', (e) => e.target.style.color = "yellow");
-    document.querySelector("#btnChange").addEventListener('mouseout', (e) => e.target.style.color = "");
+    // document.querySelector("#btnChange").addEventListener('mouseover', (e) => e.target.style.color = "yellow");
+    // document.querySelector("#btnChange").addEventListener('mouseout', (e) => e.target.style.color = "");
 });
 
 // Calculator
@@ -94,31 +94,31 @@ try {
 }
 
 // Цикл
-function change() {
-    const btns = document.querySelectorAll('.btn_cat');
+// function change() {
+//     const btns = document.querySelectorAll('.btn_cat');
 
-    for (let btn of btns) {
-        console.log(btn);
-        btn.classList.toggle("green");
-    }
-}
+//     for (let btn of btns) {
+//         console.log(btn);
+//         btn.classList.toggle("green");
+//     }
+// }
 
 //focus input
 
-const email = document.querySelector('#email'),
-      error = document.querySelector('#error');
+// const email = document.querySelector('#email'),
+//       error = document.querySelector('#error');
 
-email.onblur = function() {
-    if (!email.value.includes('@')) {
-        email.focus();
-        email.classList.add('invalid');
-        error.innerHTML = 'Пожалуйста, введите правильный email.';
-    }
-};
+// email.onblur = function() {
+//     if (!email.value.includes('@')) {
+//         email.focus();
+//         email.classList.add('invalid');
+//         error.innerHTML = 'Пожалуйста, введите правильный email.';
+//     }
+// };
   
-email.onfocus = function() {
-    if (this.classList.contains('invalid')) {
-        this.classList.remove('invalid');
-        error.innerHTML = "";
-    }
-};
+// email.onfocus = function() {
+//     if (this.classList.contains('invalid')) {
+//         this.classList.remove('invalid');
+//         error.innerHTML = "";
+//     }
+// };
