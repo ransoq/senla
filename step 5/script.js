@@ -145,13 +145,13 @@ const cats = ['Boris', 'Murzik', 'Barsik'],
 
 // console.log(animals);
 
-const nums = [1, 5, 4];
+const rest = ['really','cute', 'cat'];
 
-function arrRest(a, b, c) {
-    return a + b + c;
+function arrRest(a, b, c, ...rest) {
+    console.log(a, b, c, rest);
 }
 
-// console.log(arrRest(...nums));
+console.log(arrRest('Boris', 'is', 'a', ...rest));
 
 // class and super
 
@@ -168,19 +168,13 @@ class Animal {
 
 class Cat extends Animal {
     constructor(paws, tail, fur) {
-        super();
+        super(paws, tail, fur);
         this.name = 'Boris';
-        this.paws = paws;
-        this.tail = tail;
-        this.fur = fur;
-    }
-
-    foo() {
-        super.say();
     }
 }
 
 const Boris = new Cat(4, true, true);
+
 
 Boris.say();
 // console.log(Boris);
@@ -201,18 +195,13 @@ const iter = gen(1);
 
 // Деструктуризация объекта
 
-// const objDest = {
-//     a: 1,
-//     b: 2,
-//     c: 3
-// };
+const objDest = {
+    a: 1,
+    b: 2,
+    c: 3
+};
 
-// const {a, b, c} = objDest;
+const {a, b, c} = objDest;
 
 // console.log(a, b, c);
 
-const a = {b: 1};
-const c = {...a,
-d: 2}
-
-console.log(c);
