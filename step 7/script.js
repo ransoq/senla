@@ -30,14 +30,20 @@ const getData = (name) => {
     .then(obj => {
         deletePrevList();
         addItems(obj);
-    });
+    })
+    .catch(err => console.error(err));
 };
 
 const getResource = async (name) => {
     const url = `https://api.github.com/users/${name}/repos`;
     const res = await fetch(url);
-    let repos = await res.json();
-
+    
     deletePrevList();
-    addItems(repos);
+
+    if (res.ok) {
+        let repos = await res.json();
+        addItems(repos);
+    } else {
+        alert("Ошибка HTTP: " + res.status);
+    }
 };
