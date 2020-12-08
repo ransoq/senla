@@ -1,20 +1,18 @@
-let values = [];
+const btn = document.querySelector("#btn");
 
-const getData = (name) => {
-    const url = `https://api.github.com/users/${name}/repos`;
-    const res = fetch(url);
-    // .then(JSON.parse('"name"'))
-    // .then(data => console.log(data));
+btn.addEventListener('click', function (e) {
+    const value = document.querySelector("#inp").value;
+    e.preventDefault();
+    getResource(value);
+});
+
+const deletePrevList = () => {
+    const elem = document.querySelectorAll('#ulRepos > li');
+    elem.forEach(elem => elem.remove());
 };
 
-const getResource = async (name) => {
-    const listRepos = document.querySelector('.repos');
-    const url = `https://api.github.com/users/${name}/repos`;
-    const res = await fetch(url);
-    
-    let repos = await res.json();
-
-    repos.forEach(function(obj) {
+const addItems = (data) => {
+    data.forEach(function(obj) {
         const newLi = document.createElement("li"),
               cacheUl = document.querySelector("#ulRepos"),
               newContent = document.createTextNode(obj.name);
@@ -24,5 +22,22 @@ const getResource = async (name) => {
     });
 };
 
-// getData('ransoq');
-getResource('ransoq');
+const getData = (name) => {
+    const url = `https://api.github.com/users/${name}/repos`;
+
+    fetch(url)
+    .then(data => data.json())
+    .then(obj => {
+        deletePrevList();
+        addItems(obj);
+    });
+};
+
+const getResource = async (name) => {
+    const url = `https://api.github.com/users/${name}/repos`;
+    const res = await fetch(url);
+    let repos = await res.json();
+
+    deletePrevList();
+    addItems(repos);
+};
