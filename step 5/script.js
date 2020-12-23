@@ -145,13 +145,17 @@ const cats = ['Boris', 'Murzik', 'Barsik'],
 
 // console.log(animals);
 
-const nums = [1, 5, 4];
+const rest = ['really','cute', 'cat'];
 
-function arrRest(a, b, c) {
-    return a + b + c;
+function arrRest(a, b, c, ...rest) {
+    console.log(a, b, c, rest);
 }
 
+<<<<<<< HEAD
 // console.log(arrRest(...nums));
+=======
+console.log(arrRest('Boris', 'is', 'a', ...rest));
+>>>>>>> bbf1b16dc4cf212f0bda3a6c62271de0cdc513ca
 
 // class and super
 
@@ -181,6 +185,7 @@ class Cat extends Animal {
 }
 
 const Boris = new Cat(4, true, true);
+
 
 Boris.say();
 // console.log(Boris);
@@ -215,4 +220,9 @@ const a = {b: 1};
 const c = {...a,
 d: 2}
 
+<<<<<<< HEAD
 console.log(c);
+=======
+// console.log(a, b, c);
+
+>>>>>>> bbf1b16dc4cf212f0bda3a6c62271de0cdc513ca
