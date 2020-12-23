@@ -14,7 +14,6 @@
 }
 
 #btn {
-    margin-left: 20px;
     border: none;
     background-color: #028a3b;
     border-radius: 5px;
@@ -27,6 +26,7 @@
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
+    margin-top: 40px;
 }
 
 #btn:hover {
@@ -41,7 +41,7 @@
 
 #ulRepos li {
     padding: 7px 20px;
-    margin-bottom: 10px;
+    margin-top: 40px;
     border-radius: 5px;
     box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
                 -2px -2px 5px 0 rgba(0,0,0,.1),

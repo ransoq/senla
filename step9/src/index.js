@@ -13,25 +13,21 @@ class App extends Component {
         }
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
     
     handleChange(e) {
         this.setState({username: e.target.value});
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-
+    handleClick() {
         const newRepos = [];
 
         this.getUserRepo(this.state.username)
             .then(data => data.forEach((obj) => {
                 newRepos.push(obj.name);
-            }));
-
-        this.setState({repos: newRepos, showList: true});
-    }
+            })).then(() => this.setState({repos: newRepos, showList: true})
+        )};
 
     getUserRepo = async (username) => {
         const res = await fetch(`https://api.github.com/users/${username}/repos`);
@@ -48,25 +44,27 @@ class App extends Component {
 
         const { repos, showList } = this.state;
 
-        let reposList = repos.map((name) => <li key={name}>{name}</li>);
+        let reposList = repos.map((name) => {
+            return <div>
+                <li key={name}>{name}</li>
+            </div>
+        });
 
         const list = showList ? reposList : null;
 
         return (
             <div className="app">
                 <h1>Введите имя пользователя, чтобы получить список его репозиториев</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <input 
-                        type="text" 
-                        name="text"
-                        id="inp"
-                        placeholder="Введите имя пользователя"
-                        onChange={this.handleChange}></input>
-                    <input
-                        type="submit" 
-                        id="btn"
-                        value="Получить"></input>
-                </form>
+                <input 
+                    type="text" 
+                    name="text"
+                    id="inp"
+                    placeholder="Введите имя пользователя"
+                    onChange={this.handleChange}></input>
+                <button
+                    onClick={this.handleClick}
+                    id="btn">Получить</button>
+
                 <ul id="ulRepos">{list}</ul>
             </div>
         )

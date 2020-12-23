@@ -13,7 +13,10 @@ const App = () => {
                     name="text"
                     id="inp"
                     placeholder="Введите имя пользователя"></input>
-                <button id="btn">Получить GIT</button>
+                <button 
+                    type="submit"
+                    onClick={(e) => e.preventDefault()}
+                    id="btn">Получить GIT</button>
             </form>
         </div>
     )

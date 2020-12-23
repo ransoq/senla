@@ -47,12 +47,12 @@ const getResource = async (name) => {
         alert("Ошибка HTTP: " + res.status);
     }
 
-    // if (res.ok) {
-    //     let repos = await res.json();
-    //     addItems(repos);
-    // } else {
-    //     alert("Ошибка HTTP: " + res.status);
-    // }
+    if (res.ok) {
+        let repos = await res.json();
+        addItems(repos);
+    } else {
+        alert("Ошибка HTTP: " + res.status);
+    }
 };
 
 function request (name) {
