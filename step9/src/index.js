@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 import './app.css';
 
 class App extends Component {
@@ -42,33 +48,61 @@ class App extends Component {
 
     render() {
 
-        const { repos, showList } = this.state;
+        // const { repos, showList } = this.state;
+
+        // let reposList = repos.map((name) => {
+        //     return React.createElement('div', null, React.createElement("li", { key: name}, name));
+        //     // <div>
+        //     //     <li key={name}>{name}</li>
+        //     // </div>
+        // });
+
+        // const list = showList ? reposList : null;
+
+        return (
+            <Router>
+                <div className="app">
+                    <h1>Введите имя пользователя, чтобы получить список его репозиториев</h1>
+                    <input 
+                        type="text" 
+                        name="text"
+                        id="inp"
+                        placeholder="Введите имя пользователя"
+                        onChange={this.handleChange}></input>
+                    <Link to="/repos">
+                        <button
+                            onClick={this.handleClick}
+                            id="btn">Получить</button>
+                    </Link>
+                    {/* <ul id="ulRepos">{list}</ul> */}
+
+                    <Switch>
+                        <Route exact path="/repos">
+                            {this.props.render(this.state.repos)}
+                        </Route>
+                    </Switch>
+                </div>
+            </Router>
+            
+        )
+    }    
+}
+
+class Repos extends Component {
+    render() {
+        const repos = this.props.repos;
 
         let reposList = repos.map((name) => {
             return <div>
-                <li key={name}>{name}</li>
-            </div>
+                        <li key={name}>{name}</li>
+                   </div>
         });
 
-        const list = showList ? reposList : null;
-
-        return (
-            <div className="app">
-                <h1>Введите имя пользователя, чтобы получить список его репозиториев</h1>
-                <input 
-                    type="text" 
-                    name="text"
-                    id="inp"
-                    placeholder="Введите имя пользователя"
-                    onChange={this.handleChange}></input>
-                <button
-                    onClick={this.handleClick}
-                    id="btn">Получить</button>
-
-                <ul id="ulRepos">{list}</ul>
-            </div>
-        )
+        return ( <ul id="ulRepos">{reposList}</ul>
+        );
     }
 }
 
-ReactDom.render(<App/>, document.getElementById('root'));
+ReactDom.render(<App render={repos => (
+    <Repos repos={repos}/>
+)}/>, document.getElementById('root'));
