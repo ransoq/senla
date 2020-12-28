@@ -49,3 +49,8 @@
                 -2px 2px 5px 0 rgba(0,0,0,.1);
     font-size: 20px;
 }
+
+.wrap {
+    display: flex;
+    justify-content: space-around;
+}
