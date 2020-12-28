@@ -41,17 +41,17 @@ export default class ReposPage extends Component {
         return (
             <>
                 <h2>Введите имя пользователя, чтобы получить список его репозиториев</h2>
-                    <input 
-                        type="text" 
-                        name="text"
-                        id="inp"
-                        placeholder="Введите имя пользователя"
-                        onChange={this.handleChange}></input>
-                        <button
-                            onClick={this.handleClick}
-                            id="btn">Получить</button>
+                <input 
+                    type="text" 
+                    name="text"
+                    id="inp"
+                    placeholder="Введите имя пользователя"
+                    onChange={this.handleChange}></input>
+                <button
+                    onClick={this.handleClick}
+                    id="btn">Получить</button>
 
-                        <ReposList>{reposList}</ReposList>
+                <ReposList>{reposList}</ReposList>
             </>
         )
     }
