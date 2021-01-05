@@ -4,10 +4,6 @@ export default class CatPage extends Component {
         return(
             <div>
                  <embed width="500px" src="https://i.gifer.com/ZiFz.gif"></embed>
-                <ul>
-                    <li className="test"></li>
-                    <li className="test"></li>
-                </ul>
             </div>
         )
     }
