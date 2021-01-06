@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReposPage from '../../containers/reposPage';
 import MainPage from '../../containers/mainPage';
 import CatPage from '../../containers/catPage';
@@ -11,9 +11,7 @@ import {
 import '../../styles/app.css';
 
 
-export default class App extends Component {
-
-    render() {
+const App = () => {
 
         return (
             <Router>
@@ -26,5 +24,6 @@ export default class App extends Component {
                 </div>
             </Router>
         )
-    }    
 }
+
+export default App;
