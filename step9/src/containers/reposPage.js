@@ -28,7 +28,7 @@ export default class ReposPage extends Component {
         this.gotService.getResource(this.state.username)
             .then(data => data.forEach((obj) => {
                 newRepos.push(obj.name);
-            })).then(() => this.setState({repos: newRepos, showList: true}))
+            })).then(() => this.setState({repos: newRepos}))
     };
 
     render() {
